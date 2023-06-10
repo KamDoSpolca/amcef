@@ -1,0 +1,13 @@
+<div class="home-main">
+  <div class="position-center">
+    <h3>
+      Welcome to TO DO list App
+    </h3>
+    <h5 *ngIf="!userIsAuth" class="align-center">
+      Please <a routerLink="/login">Login</a>
+    </h5>
+    <h5 *ngIf="userIsAuth" class="align-center">
+      Please proceed to <a routerLink="/dashboard">Dashboard</a>
+    </h5>
+  </div>
+</div>

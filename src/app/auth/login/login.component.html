@@ -1,0 +1,19 @@
+<div class="m-3 align-center">
+  <h4>Login</h4>
+</div>
+
+<div class="position-center">
+  <form [formGroup]="formGroup" class="row">
+    <mat-form-field class="col-12">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email">
+    </mat-form-field>
+
+    <mat-form-field class="col-12 mt-2">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password">
+    </mat-form-field>
+  </form>
+
+  <button class="col-12 mt-2" (click)="onLogin()" [disabled]="formGroup.invalid" mat-flat-button color="accent">Login</button>
+</div>

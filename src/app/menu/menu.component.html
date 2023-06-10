@@ -1,0 +1,19 @@
+<nav class="background-primary p-2">
+  <a mat-flat-button color="primary" routerLink="/">
+    <mat-icon>home</mat-icon>
+    <span>Home</span>
+  </a>
+
+  <a *ngIf="userIsAuth" mat-flat-button color="primary" routerLink="/dashboard">
+    <span>Dashboard</span>
+  </a>
+  <a *ngIf="userIsAuth" mat-flat-button color="primary" routerLink="/logout">
+    <span>Logout</span>
+  </a>
+  <a *ngIf="!userIsAuth" mat-flat-button color="primary" routerLink="/login">
+    <span>Login</span>
+  </a>
+</nav>
+
+
+

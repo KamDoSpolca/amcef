@@ -1,0 +1,34 @@
+<div class="m-3 align-center">
+  <h4>Dashboard</h4>
+</div>
+
+<div class="m-1">
+  <mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let todo of todos" (click)="onOpenTodo(todo?.id)">
+      <div>
+        <div><b>{{todo?.name}}</b></div>
+        <div>To Do Items : {{todo?.todoList?.length}}</div>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>      
+      <div *ngIf="!displayAddForm">
+        <button (click)="toggleForm()" mat-flat-button color="accent">Add List</button>
+      </div>
+
+      <div *ngIf="displayAddForm">
+        <form [formGroup]="formGroup">
+          <mat-form-field>
+            <mat-label>List Name</mat-label>
+            <input matInput formControlName="todoName">
+          </mat-form-field>
+        </form>
+
+        <div class="m-1">
+          <button (click)="toggleForm()" mat-flat-button class="mr-3">Cancel</button>
+          <button (click)="onAddTodo()" mat-flat-button color="primary" [disabled]="formGroup.invalid">Add</button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
